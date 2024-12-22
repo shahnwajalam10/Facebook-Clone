@@ -60,7 +60,7 @@ function savePostToLocalStorage(post) {
     localStorage.setItem('posts', JSON.stringify(posts));
 }
 
-// Function to redirect to the homepage
+//redirect to the homepage
 function redirectToHomepage() {
     window.location.href = '../index.html';
 }

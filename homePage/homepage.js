@@ -203,18 +203,18 @@ Bg3.addEventListener('click', () => {
 
     // add active class
     Bg3.classList.add('active');
-    // remove active class from the others
+    
     Bg1.classList.remove('active');
     Bg2.classList.remove('active');
     changeBG();
 });
 
-// Function to display posts from local storage in the feed
+//  display posts 
 function displayPosts() {
     const feedsContainer = document.querySelector('.feedss');
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
 
-    // Clear the container before displaying posts
+   
     feedsContainer.innerHTML = '';
 
     posts.forEach(post => {
@@ -259,5 +259,5 @@ function displayPosts() {
     });
 }
 
-// Call displayPosts when the page loads
+
 window.onload = displayPosts;
