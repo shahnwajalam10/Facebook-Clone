@@ -15,8 +15,24 @@ const users = [
         lastName: "gupta",
         birth: "09-03-2011",
         gender: "male",
-        contact: "6362038373",
-        password: "raju@2341"
+        contact: "divyam",
+        password: "divyam"
+    }
+    {
+        firstName: "anuj",
+        lastName: "gupta",
+        birth: "09-03-2011",
+        gender: "male",
+        contact: "anuj",
+        password: "anuj"
+    }
+    {
+        firstName: "shahnawaz",
+        lastName: "",
+        birth: "09-04-2011",
+        gender: "male",
+        contact: "shahnawaz",
+        password: "123456"
     }
 ];
 

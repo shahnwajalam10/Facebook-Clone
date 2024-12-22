@@ -52,11 +52,8 @@ form.addEventListener('submit', (event) => {
 function savePostToLocalStorage(post) {
     // Retrieve existing posts from local storage
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
-
-    // Add the new post to the list
+    //  new post 
     posts.push(post);
-
-    // Save the updated posts list back to local storage
     localStorage.setItem('posts', JSON.stringify(posts));
 }
 
