@@ -82,7 +82,10 @@ img {
 .btn-primary {
     background: var(--color-primary);
     color: var(--color-white);
+    
 }
+
+
 
 .text-bold {
     font-weight: 500;
@@ -782,3 +785,17 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         width: 80vw; 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
