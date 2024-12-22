@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="stylesheet" href="loginPage.css">
+</head>
+<body>
+    <div id="container">
+           <div id="content">
+                  <div>
+                    <div id="fb">
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="fb">
+                    </div>
+                    <h2>Facebook helps you connect and share with the people in your life.</h2>
+                  </div>
+                  <div>
+                    <div id="loginPage">
+                    
+                        <form id="loginForm">
+                            <input type="text" id="emailInput" placeholder="Email address or phone number" required><br>
+                            <input type="password" id="password" placeholder="Password" required><br>
+                            <button id="loginBtn" type="submit">Log in</button><br>
+                            <a href="forgot.html">Forgot password?</a>
+                        </form>
+                    
+                        <div id="line"></div>
+                        
+                        <button id="CreateBtn">Create new account</button>
+                        
+                        
+                    </div>
+                       <a href="celebrityPage.html" id="lastA">Create a page <span>for a celebrity ,brand or business.</span></a>
+                  </div>
+                  
+           </div>
+    </div>
+</body>
+</html>
+<script>
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit",function(e){
+   e.preventDefault();
+  console.log("raju")
+   const contactInf = document.getElementById("emailInput").value.trim();
+   const password=document.getElementById("password").value.trim();
+
+   let users=JSON.parse(localStorage.getItem("users"))||[];
+
+   const user=users.find(ele =>(ele.contact===contactInf && ele.password===password))
+  
+
+   if(user){
+    alert("login successfully")
+    window.location.href="homePage.html";
+   }
+   else{
+    alert("user not found")
+   }
+});
+
+
+
+const CreateBtn=document.getElementById("CreateBtn");
+
+CreateBtn.addEventListener('click',()=>{
+        window.location.href="createUser.html"
+})
+
+
+</script>
