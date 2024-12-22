@@ -208,3 +208,56 @@ Bg3.addEventListener('click', () => {
     Bg2.classList.remove('active');
     changeBG();
 });
+
+// Function to display posts from local storage in the feed
+function displayPosts() {
+    const feedsContainer = document.querySelector('.feedss');
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+    // Clear the container before displaying posts
+    feedsContainer.innerHTML = '';
+
+    posts.forEach(post => {
+        const feedElement = document.createElement('div');
+        feedElement.classList.add('feed');
+
+        feedElement.innerHTML = `
+            <div class="head">
+                <div class="user">
+                    <div class="profile-photo">
+                        <img src="https://example.com/path/to/default/profile/photo.jpg" alt="User  Profile Photo">
+                    </div>
+                    <div class="info">
+                        <h3>${post.title}</h3>
+                        <small>${new Date(post.timestamp).toLocaleString()}</small>
+                    </div>
+                </div>
+                <span class="edit">
+                    <i class="uil uil-ellipsis-h"></i>
+                </span>
+            </div>
+            <div class="caption">
+                <p>${post.content}</p>
+            </div>
+            ${post.image ? `<div class="photo"><img src="${post.image}" alt="Post Image"></div>` : ''}
+            <div class="action-buttons">
+                <div class="interaction-buttons">
+                    <span><i class="uil uil-heart"></i></span>
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+            </div>
+            <div class="comments text-muted">
+                View all comments
+            </div>
+        `;
+
+        feedsContainer.appendChild(feedElement);
+    });
+}
+
+// Call displayPosts when the page loads
+window.onload = displayPosts;
