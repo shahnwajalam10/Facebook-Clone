@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        #container{
+            width:100%;
+            height:auto;
+            border: 1px solid black;
+            background-color: rgb(228, 231, 230);
+        }
+        #navbar{
+            width: 100%;
+            height: 50px;
+            /* border: 1px solid red; */
+            display: grid;
+            grid-template-columns:repeat(3,1fr) ;
+            grid-template-rows: 100%;
+            /* position: fixed; */
+            background-color: white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+        #navbar>div{
+            /* border: 1px dashed blue; */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+        }
+        #navbar>div:nth-child(2){
+            display: flex;
+            justify-content: space-around;
+        }
+        #navbar>div:nth-child(3)>div{
+            width: 35px;
+            height: 35px;
+            border-radius: 100%;
+            background-color: rgb(228, 231, 230);
+            /* text-align: center; */
+            display: grid;
+            place-items: center;
+
+        }
+        #navbar>div:nth-child(3){
+            display: flex;
+            justify-content:end;
+            padding: 15px;
+        }
+        svg{
+            margin-left: -2px;
+        }
+        .searchBar{
+            border: 0px;
+            height: 30px;
+            width: 50%;
+            border-radius: 20px;
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(228, 231, 230);
+            
+        }
+        .searchBar>input{
+            border: none;
+            outline: none;
+            font-size: 14px;
+            margin-bottom: 5px;
+            background-color: rgb(228, 231, 230);
+            margin-top: 2px;
+      
+        }
+        i{
+          font-size: 20px;  
+        }
+        #navbar>div:nth-child(2) i:hover{
+            
+            border-bottom: 3px solid blue;
+            color: blue;
+        }
+        #navbar a{
+            color: black;
+            text-decoration: none;
+        }
+        #middle{
+            width: 100%;
+            height: 800px;
+            border: 2px solid red;
+            display: grid;
+            grid-template-columns: 25% 45% 25%;
+            grid-template-rows: 100%;
+            justify-content: space-between;
+        }
+        #middle>div{
+            border: 3px solid blue;
+        }
+        #sidebar>div:nth-child(1){
+              width: 100%;
+              height: 300px;
+              border: 3px solid yellow;
+             
+              overflow:hidden;
+              transition: height 0.3s ease; 
+
+              
+        }
+        #sidebar>div:nth-child(1) div{
+                width: 100%;
+                height: 30px;
+                border: 1px solid green;
+
+        }
+        #sidebar>div:nth-child(1) img{
+            width: 30px;
+            height: 20px;
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <nav id="navbar">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="50">
+                        <circle cx="15" cy="12" r="11" fill="#1877F2" />
+                        <path 
+                          fill="#FFF" 
+                          transform="translate(2, 2) scale(0.85)" 
+                          d="M16.845 24v-9.294h3.121l.467-3.696h-3.588V8.695c0-1.05.292-1.766 1.797-1.766h1.92V3.689c-.33-.045-1.47-.144-2.796-.144-2.765 0-4.658 1.688-4.658 4.788v2.595H9.692v3.696h3.128V24h4.025z"
+                        />
+                      </svg>
+                      
+                      <div class="searchBar">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30px" height="20px">
+                            <path d="M10 2a8 8 0 105.3 14.3l5.4 5.4a1 1 0 001.4-1.4l-5.4-5.4A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+                        </svg>
+                          
+                          <input type="text" placeholder="Search Facebook">
+                      </div>
+                      
+                </div>
+                <div>
+                    <a href="#"><i class="fa-solid fa-house "></i></a>
+                    <a href="#"><i class="fas fa-video"></i> </a>
+                    <a href="#"><i class="fas fa-store"></i></a>
+                    <a href="#"><i class="fas fa-gamepad"></i></a>
+                
+                </div>
+                <div>
+                    <div><i class="fas fa-bars"></i></div>
+                    <div><i class="fab fa-facebook-messenger"></i>
+                    </div>
+                    <div><i class="fas fa-bell"></i>
+                    </div>
+                    <div><i class="fas fa-user"></i></div>
+                </div>
+             </nav>
+        </div>
+
+       <div id="middle">
+           <div id="sidebar">
+                <div>
+                    <div><a href="#"><i class="fas fa-user"></i><span>userName</span></a></div>
+                    <div><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/6854/6854166.png" alt="frd"><span>Friends</span></a></div>
+                    <div><a href="#"><img src="https://cdn0.iconfinder.com/data/icons/facebook-feature-outline/32/facebook-18-512.png" alt="mem"><span>Memories</span></a></div>
+                    <div><a href="#"><i class="fa-regular fa-bookmark"></i><span>Saved</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-layer-group"></i><span>Groups</span></a></div>
+                    <div> <a href="#"><i class="fas fa-video"></i> <span>Video</span></a></div>
+                    <div><a href="#"><i class="fas fa-store"></i><span>Marketplace</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-comment-medical"></i><span>Feeds</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-chart-column"></i><span>Ads Manager</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-gift"></i><span>Birthday</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-cloud-sun"></i><span>Climate Science Centre</span></a></div>
+                    <div><a href="#"><i class="fa-regular fa-calendar-check"></i><span>Events</span></a></div>
+                    <div><a href="#"><i class="fa-brands fa-cc-amazon-pay"></i><span>Facebook Pay</span></a></div>
+                    <div><a href="#"><i class="fa-brands fa-gratipay"></i><span>Fundrisers</span></a></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                </div>
+                <button class="toggle-button" id="toggleButton">^See More</button>
+                <div></div>
+           </div>
+           <div></div>
+           <div></div>
+       </div>
+
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+ const content = document.querySelector("#sidebar > div:first-child");
+    const button = document.getElementById("toggleButton");
+
+    button.addEventListener("click", () => {
+        const currentHeight = getComputedStyle(content).height;
+        if (currentHeight === "300px") {
+            content.style.height = "auto";
+            button.textContent = "See Less";
+        } else {
+            content.style.height = "300px";
+            button.textContent = "See More";
+        }
+    });
+
+</script>
