@@ -115,7 +115,7 @@
             border: 0px;
             
         }
-        a[href="#creatApage"]{
+        #lastA{
              text-decoration: none;
              color: black;
              margin: 0px;
@@ -246,7 +246,7 @@
            padding: 13px;
            width: 60%;
         }
-        a[href="#creatApage"]{    
+       #lastA{    
             margin: 0px;
             margin-top: 15px;
             margin-left: 50px;
@@ -269,7 +269,7 @@
       img[alt="fb"]{
         margin-left: -20px;
       }
-      a[href="#creatApage"]{
+      #lastA{
         margin-left:7px;
        
       }
@@ -293,8 +293,8 @@
                   <div>
                     <div id="loginPage">
                     
-                        <form >
-                            <input type="text" id="emalInput" placeholder="Email address or phone number" required><br>
+                        <form id="loginForm">
+                            <input type="text" id="emailInput" placeholder="Email address or phone number" required><br>
                             <input type="password" id="password" placeholder="Password" required><br>
                             <button id="loginBtn" type="submit">Log in</button><br>
                             <a href="forgot.html">Forgot password?</a>
@@ -306,10 +306,43 @@
                         
                         
                     </div>
-                       <a href="#creatApage">Create a page <span>for a celebrity ,brand or business.</span></a>
+                       <a href="createUser.html" id="lastA">Create a page <span>for a celebrity ,brand or business.</span></a>
                   </div>
                   
            </div>
     </div>
 </body>
 </html>
+<script>
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit",function(e){
+   e.preventDefault();
+  console.log("raju")
+   const contactInf = document.getElementById("emailInput").value.trim();
+   const password=document.getElementById("password").value.trim();
+
+   let users=JSON.parse(localStorage.getItem("users"))||[];
+
+   const user=users.find(ele =>(ele.contact===contactInf && ele.password===password))
+  
+
+   if(user){
+    alert("login successfully")
+    window.location.href="homePage.html";
+   }
+   else{
+    alert("user not found")
+   }
+});
+
+
+
+const CreateBtn=document.getElementById("CreateBtn");
+
+CreateBtn.addEventListener('click',()=>{
+        window.location.href="createUser.html"
+})
+
+
+</script>
