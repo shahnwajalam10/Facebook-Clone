@@ -1,5 +1,8 @@
 # Facebook-Clone (B41_WEB_021_THE WEB WIZARDS):-
 
+# project deploy link:--
+      https://splendorous-duckanoo-efcf4f.netlify.app/index.html
+
 # Facebook Application :--
 
 A simplified clone of Facebook's login page,create user new account,create account page for celebrity and home page created as a collaborative project to practice front-end web development and Git workflows.
